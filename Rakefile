@@ -10,7 +10,7 @@ task default: :compile
 task :compile do
   FileList.new('./src/*.html.haml').each do |filename|
     if filename =~ /([^\/]+)\.haml$/
-      File.open(./public/$1, 'w') do |f|
+      File.open('./public/'$1, 'w') do |f|
         f.write Haml::Engine.new(File.read(filename)).render
       end
     end
