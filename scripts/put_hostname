@@ -1,0 +1,4 @@
+#!/bin/bash
+x=`hostname`
+`echo test >/tmp/test.log`
+`sed -i "s/ServerName/$x/g" /var/www/html/index.html`
